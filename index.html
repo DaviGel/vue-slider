@@ -13,18 +13,17 @@
     <div id="app">
       <div class="container">
         <div class="slider-wrapper" tabindex="0">
-          <!-- <div class="item">
-            <img src="img/01.webp" alt="Spiderman" />
+          <!-- Immagine attiva -->
+          <div class="item">
+            <img
+              :src="slides[currentElement].image"
+              :alt="`img-${currentElement}`"
+            />
             <div class="text">
-              <h3>Spiderman</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et
-                temporibus voluptatum suscipit tempore aliquid deleniti aut
-                veniam inventore eligendi ex ad ullam, cumque provident totam
-                omnis, magnam dolores dolorum corporis.
-              </p>
+              <h3>{{ slides[currentElement].title }}</h3>
+              <p>{{ slides[currentElement].text }}</p>
             </div>
-          </div> -->
+          </div>
 
           <!-- <div class="thumbs">
             <div class="prev"></div>
@@ -45,6 +44,16 @@
               <img src="img/05.webp" alt="Avengers" />
             </div>
           </div> -->
+          <!-- Thumbnails -->
+          <div class="thumbs">
+            <div @click="prevImg" class="prev"></div>
+            <div @click="nextImg" class="next"></div>
+            <div v-for="(thumb, index) in slides">
+              <div class="thumb">
+                <img :src="slides[index].image" :alt="`img-${index + 1}`" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
