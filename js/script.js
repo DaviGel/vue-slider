@@ -52,4 +52,8 @@ createApp({
       this.currentElement = index;
     },
   },
+
+  mounted() {
+    setInterval(this.nextImg, 3_000);
+  },
 }).mount('#app');
