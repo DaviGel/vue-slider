@@ -6,6 +6,7 @@ createApp({
   data() {
     let currentElement = 0;
     return {
+      change: 0,
       slides: [
         {
           image: 'img/01.webp',
@@ -54,17 +55,14 @@ createApp({
 
     mouseOver() {
       clearInterval(this.change);
-      console.log('cancellato intervallo');
     },
 
     mouseLeave() {
       this.change = setInterval(this.nextImg, 3_000);
-      console.log('ricreato intervallo');
     },
   },
 
   mounted() {
     this.change = setInterval(this.nextImg, 3_000);
-    console.log('aggiunto intervallo');
   },
 }).mount('#app');
