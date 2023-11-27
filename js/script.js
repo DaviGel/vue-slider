@@ -42,10 +42,12 @@ createApp({
       this.currentElement--;
       if (this.currentElement < 0) this.currentElement = this.slides.length - 1;
     },
+
     nextImg() {
       this.currentElement++;
       if (this.currentElement > this.slides.length - 1) this.currentElement = 0;
     },
+
     changeActiveThumb(index) {
       this.currentElement = index;
     },
