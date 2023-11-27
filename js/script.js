@@ -5,6 +5,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     let currentElement = 0;
+    let change;
     return {
       slides: [
         {
@@ -51,9 +52,20 @@ createApp({
     changeActiveThumb(index) {
       this.currentElement = index;
     },
+
+    mouseOver() {
+      clearInterval(this.change);
+      console.log('cancellato intervallo');
+    },
+
+    mouseLeave() {
+      this.change = setInterval(this.nextImg, 3_000);
+      console.log('ricreato intervallo');
+    },
   },
 
   mounted() {
-    setInterval(this.nextImg, 3_000);
+    this.change = setInterval(this.nextImg, 3_000);
+    console.log('aggiunto intervallo');
   },
 }).mount('#app');
