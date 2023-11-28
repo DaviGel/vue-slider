@@ -65,7 +65,9 @@ createApp({
   },
 
   mounted() {
-    this.change = setInterval(this.nextImg, 3_000);
-    this.currentStatus = true;
+    // this.change = setInterval(this.nextImg, 3_000);
+    // this.currentStatus = true;
+    // Posso invocare mouseLeave() in quanto continene le stesse istruzioni del mio mounted
+    this.mouseLeave();
   },
 }).mount('#app');
