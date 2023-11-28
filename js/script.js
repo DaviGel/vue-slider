@@ -6,7 +6,6 @@ createApp({
   data() {
     let currentElement = 0;
     return {
-      change: 0,
       slides: [
         {
           image: 'img/01.webp',
@@ -34,7 +33,8 @@ createApp({
           text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
         },
       ],
-      currentElement,
+      currentElement: 0,
+      change: 0,
     };
   },
 
