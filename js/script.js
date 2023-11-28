@@ -34,6 +34,7 @@ createApp({
       ],
       currentElement: 0,
       change: 0,
+      currentStatus: false,
     };
   },
 
@@ -53,15 +54,18 @@ createApp({
     },
 
     mouseOver() {
-      clearInterval(this.change);
+      if (this.currentStatus === true) clearInterval(this.change);
+      this.currentStatus = false;
     },
 
     mouseLeave() {
       this.change = setInterval(this.nextImg, 3_000);
+      this.currentStatus = true;
     },
   },
 
   mounted() {
     this.change = setInterval(this.nextImg, 3_000);
+    this.currentStatus = true;
   },
 }).mount('#app');
