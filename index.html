@@ -24,7 +24,7 @@
               :src="slides[currentElement].image"
               :alt="slides[currentElement].title"
             />
-            <div class="text">
+            <div class="text" v-cloak>
               <h3>{{ slides[currentElement].title }}</h3>
               <p>{{ slides[currentElement].text }}</p>
             </div>
