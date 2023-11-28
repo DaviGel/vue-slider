@@ -4,7 +4,6 @@ const { createApp } = Vue;
 
 createApp({
   data() {
-    let currentElement = 0;
     return {
       slides: [
         {
